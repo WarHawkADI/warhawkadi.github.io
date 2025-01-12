@@ -63,13 +63,6 @@ Here is an overview of the main files and their purposes:
 
 ---
 
-## Contact
-Feel free to reach out for feedback, suggestions, or collaborations:
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
-
----
 
 Thank you for visiting my portfolio website repository!
