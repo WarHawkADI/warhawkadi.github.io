@@ -65,3 +65,22 @@ ball.style.height = '20px';
 
 // Start the ball following the mouse movement
 followMouse();
+
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevents default form submission (page reload)
+    var form = this;
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+    }).then(response => {
+        if (response.ok) {
+            alert("Thank you! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    }).catch(() => alert("Error connecting to the server. Try again later."));
+});
