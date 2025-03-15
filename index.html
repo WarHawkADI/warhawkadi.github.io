@@ -12,8 +12,21 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Aditya Rai</title>
+
 </head>
 <body>
+    <div id="loader">
+        <div id="load">
+          <div>G</div>
+          <div>N</div>
+          <div>I</div>
+          <div>D</div>
+          <div>A</div>
+          <div>O</div>
+          <div>L</div>
+        </div>
+      </div>
+      
     <!--Waves Container-->
 <div>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,6 +56,9 @@
     <nav id="navbar" class="navbar"><a href="#"></a></nav>
 
 <div class="container">
+
+
+
     <!--=============== NAVIGATION MENU ===============-->
 
     <div class="menu">
@@ -107,17 +123,16 @@
                 <div class="col-2">
                     <div class="about-item skills">
                         <h1>Skills</h1>
-                        <span class="skill">HTML</span>
+                        <span class="skill">Java</span>
                         <span class="skill">Python</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">C</span>
                         <span class="skill">C++</span>
-                        <span class="skill">Communication</span>
-                        <span class="skill">Teamwork</span>
-                        <span class="skill">Aptitude</span>
-                        <span class="skill">Leadership</span>
+                        <span class="skill">Elasticsearch</span>
+                        <span class="skill">SpringBoot</span>
+                        <span class="skill">React</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">R</span>
                         <span class="skill">CSS</span>
-                       
                     </div>
 
                     <div class="about-item languages">
@@ -129,10 +144,6 @@
                         <div class="language">
                             <p>Hindi</p>
                             <span class="bar"><span class="Hindi"></span></span>
-                        </div>
-                        <div class="language">
-                            <p>Sanskrit</p>
-                            <span class="bar"><span class="Sanskrit"></span></span>
                         </div>
                         
                         
@@ -205,11 +216,11 @@
                 <div class="timeline">
                     <div class="timeline-items">
                         <div class="timeline-item">
-                            <div class="timeline-date">2005 - now</div>
+                            <div class="timeline-date">Mar 2025 - Present</div>
                             <div class="timeline-content">
-                                <h3>Existing as a Human</h3>
+                                <h3>Intern </h3>
                                 <p>
-                                    Hehe! Nothing To Show. [ •́ ‸ •̀ ]
+                                    LogiCoy Inc.
                                 </p>
                             </div>
                         </div>
@@ -246,7 +257,26 @@
         </div>
     </div>
     <script src="script.js"></script>
-
+    <!--=============== Boat ===============-->
+    <input type="checkbox" role="switch" class="paper-ship">
+    
+      
+      <script>
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            let loader = document.getElementById("loader");
+            let content = document.getElementById("content");
+      
+            loader.classList.add("hidden"); // Apply fade-out class
+            
+            setTimeout(function () {
+              loader.style.display = "none"; // Hide loader completely
+              content.style.opacity = "1"; // Fade in content smoothly
+            }, 800); // Matches CSS fade-out transition time
+          }, 3000); // Loader stays for 3 seconds before fading out
+        });
+      </script>
+      
       </body>
 
 </html>
