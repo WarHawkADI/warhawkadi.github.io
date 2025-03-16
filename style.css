@@ -733,7 +733,7 @@ textarea {
 @media (max-width: 768px) { /* Applies to tablets & mobile */
   .paper-ship {
     transform: scale(0.8); /* Reduce size */
-    top: 2rem; /* Adjust position */
+    top: 3rem; /* Adjust position */
     right: 0.5rem;
   }
 }
@@ -741,7 +741,7 @@ textarea {
 @media (max-width: 480px) { /* Smaller phones */
   .paper-ship {
     transform: scale(0.7);
-    top: 2rem; /* Adjust position */
+    top: 3rem; /* Adjust position */
     right: 0.5rem;
   }
 }
