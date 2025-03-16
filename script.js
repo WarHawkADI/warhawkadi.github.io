@@ -84,3 +84,12 @@ document.querySelector("form").addEventListener("submit", function (event) {
         }
     }).catch(() => alert("Error connecting to the server. Try again later."));
 });
+function selectEmoji(selected) {
+    // Remove "active" class from all emojis
+    document.querySelectorAll(".emoji").forEach(emoji => {
+        emoji.classList.remove("active");
+    });
+
+    // Add "active" class to the clicked emoji
+    selected.classList.add("active");
+}
