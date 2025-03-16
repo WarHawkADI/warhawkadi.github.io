@@ -853,3 +853,33 @@ body {
 body.loading {
   cursor: wait;
 }
+/* 🎯 Satisfaction Section Styling */
+#satisfaction-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9; /* Light grey background */
+  margin-top: 50px; /* Space from Contact Me */
+  border-radius: 10px;
+}
+
+/* 🎯 Emoji Container */
+#emoji-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* 🎯 Emoji Styling */
+.emoji {
+  font-size: 50px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* 🎯 Highlight Selected Emoji */
+.emoji.active {
+  opacity: 1;
+  transform: scale(1.3);
+}
