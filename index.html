@@ -35,7 +35,7 @@
         <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
       </defs>
       <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
         <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
         <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
         <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
@@ -52,16 +52,16 @@
         <span id="visit-counter">0</span>
     </div>
 
-    <nav id="navbar" class="navbar"><a href="#"></a></nav>
+    <nav id="navbar" class="navbar"></nav>
 
 <div class="container">
     <!--=============== NAVIGATION MENU ===============-->
     <div class="menu">
-        <a href="#welcome-section" class="menu-icon fas fa-home"></a>
-        <a href="#about" class="menu-icon fas fa-user"></a>
-        <a href="#projects" class="menu-icon fas fa-code"></a>
-        <a href="#experience" class="menu-icon fas fa-briefcase"></a>
-        <a href="#contact" class="menu-icon fas fa-envelope"></a>
+        <a href="#welcome-section" class="menu-icon fas fa-home" aria-label="Home"></a>
+        <a href="#about" class="menu-icon fas fa-user" aria-label="About"></a>
+        <a href="#projects" class="menu-icon fas fa-code" aria-label="Projects"></a>
+        <a href="#experience" class="menu-icon fas fa-briefcase" aria-label="Experience"></a>
+        <a href="#contact" class="menu-icon fas fa-envelope" aria-label="Contact"></a>
     </div>
 
     <!--=============== MAIN "WINDOW" ===============-->
@@ -75,26 +75,26 @@
             <h2>B.Tech (CSE) @ IIIT Delhi | 2023-2027</h2>
             <h2>"Computer viruses are an urban legend."</h2>
             <div class="socials">
-                <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank" class="fab fa-linkedin-in" id="profile-link"></a>
-                <a href="https://github.com/WarHawkADI" target="_blank" class="fab fa-github" id="profile-link"></a>
+                <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank" rel="noopener noreferrer" class="fab fa-linkedin-in" aria-label="LinkedIn Profile"></a>
+                <a href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer" class="fab fa-github" aria-label="GitHub Profile"></a>
             </div>
-            <a href="https://drive.google.com/file/d/1fIjLao-wOGOUDK5oVgKWib2ewd5hmjKx/view?usp=sharing" class="cta" target="_blank"><h3>View Resume</h3></a>
+            <a href="https://drive.google.com/file/d/1fIjLao-wOGOUDK5oVgKWib2ewd5hmjKx/view?usp=sharing" class="cta" target="_blank" rel="noopener noreferrer"><h3>View Resume</h3></a>
         </section>
 
         <!--=============== CONTENT SECTION ===============-->
         <div class="content">
             <!--=============== HOME ===============-->
             <section class="content-card home" id="welcome-section">
-                <h1>Hey, I am Aditya Rai</h1>
-                <h2>Computer Science Engineer | Tech Enthusiast</h2>
-                <h3>Building innovative solutions through code</h3>
-                <h3>Passionate about software development and machine learning</h3>
+                <h1 class="hidden-el">Hey, I am Aditya Rai</h1>
+                <h2 class="hidden-el delay-100">Computer Science Engineer | Tech Enthusiast</h2>
+                <h3 class="hidden-el delay-200">Building innovative solutions through code</h3>
+                <h3 class="hidden-el delay-300">Passionate about software development and machine learning</h3>
             </section>
 
             <!--=============== ABOUT ME ===============-->
             <section class="content-card about" id="about">
-                <h1>About me</h1>
-                <div class="about-item about-me">
+                <h1 class="hidden-el">About me</h1>
+                <div class="about-item about-me hidden-el delay-100">
                     <p>I’m Aditya Rai, an undergraduate student currently pursuing my Bachelor’s in Computer Science at IIIT Delhi. I am a curious and driven individual who values continuous learning, discipline, and meaningful contribution.
 </p>
                     <p>
@@ -110,39 +110,39 @@ Outside of academics, I have been actively involved in various roles that helped
 </p>
                 </div>
                 <div class="col-2">
-                    <div class="about-item skills">
+                    <div class="about-item skills hidden-el delay-200">
                         <h1>Skills</h1>
+                        <span class="skill">Java</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">C++</span>
+                        <span class="skill">JavaScript</span>
                         <span class="skill">SQL</span>
                         <span class="skill">Spring Boot</span>
                         <span class="skill">Elasticsearch</span>
                         <span class="skill">Kafka</span>
-                        <span class="skill">React</span>
+                        <span class="skill">RabbitMQ</span>
                         <span class="skill">AngularJS</span>
-                        <span class="skill">Django</span>
+                        <span class="skill">React</span>
+                        <span class="skill">Git</span>
+                        <span class="skill">Docker</span>
+                        <span class="skill">MySQL</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">Scikit-learn</span>
                         <span class="skill">PyTorch</span>
                         <span class="skill">TensorFlow</span>
-                        <span class="skill">Docker/Kubernetes</span>
-                        <span class="skill">Git/GitHub</span>
+                        <span class="skill">Linux</span>
+                        <span class="skill">Postman</span>
                     </div>
 
-                    <div class="about-item languages">
-                        <h1>Programming Languages</h1>
-                        <div class="language">
-                            <p>Python</p>
-                            <span class="bar"><span class="python"></span></span>
-                        </div>
-                        <div class="language">
-                            <p>Java</p>
-                            <span class="bar"><span class="java"></span></span>
-                        </div>
-                        <div class="language">
-                            <p>C/C++</p>
-                            <span class="bar"><span class="cpp"></span></span>
-                        </div>
-                        <div class="language">
-                            <p>JavaScript</p>
-                            <span class="bar"><span class="javascript"></span></span>
-                        </div>
+                    <div class="about-item achievements hidden-el delay-300">
+                        <h1>Achievements</h1>
+                        <ul>
+                            <li>Rank 1 & Semi-finalist in Goldman Sachs India Hackathon 2025</li>
+                            <li>Selected for Amazon ML Summer School 2025</li>
+                            <li>AIR 6841 in JEE Advanced; 99.45%ile in JEE Mains</li>
+                            <li>Selected for Indian National Mathematical Olympiad (INMO) & INAO</li>
+                            <li>Solved 400+ problems across Leetcode, HackerRank & GFG</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -151,7 +151,7 @@ Outside of academics, I have been actively involved in various roles that helped
             <section class="content-card projects" id="projects">
                 <h1>Projects</h1>
                 <div class="col-2 project-list">
-                    <div class="project-tile">
+                    <div class="project-tile hidden-el delay-100">
                         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eb400a58-933e-4177-b93a-9a567df45100/dfdwtg5-809fd011-3452-4a45-93e2-29fd1739c098.png/v1/fill/w_1037,h_771,q_70,strp/angry_birds_by_captainquack64_dfdwtg5-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQwNCIsInBhdGgiOiJcL2ZcL2ViNDAwYTU4LTkzM2UtNDE3Ny1iOTNhLTlhNTY3ZGY0NTEwMFwvZGZkd3RnNS04MDlmZDAxMS0zNDUyLTRhNDUtOTNlMi0yOWZkMTczOWMwOTgucG5nIiwid2lkdGgiOiI8PTE4ODkifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ztMpNZyI7Eovy7-yvGANgSxTp8YNiJ7Uyzp5mSGixuE"
                             alt="Angry Birds Clone" />
                         <div class="overlay">
@@ -163,21 +163,21 @@ Outside of academics, I have been actively involved in various roles that helped
                             </div>
                         </div>
                     </div>
-                    <div class="project-tile">
-                        <img src="https://th.bing.com/th/id/OIP.HVnY0MYUdqBEMffav47vWgHaHa?rs=1&pid=ImgDetMain"
-                            alt="University Management System" />
+                    <div class="project-tile hidden-el delay-200">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
+                            alt="AI Image Detection" />
                         <div class="overlay">
                             <div class="project-description">
-                                <h3 class="project-title">University Management System</h3>
+                                <h3 class="project-title">AI-Generated Image Detection</h3>
                                 <p class="project-desc">
-                                    Comprehensive Java-based application built using Object-Oriented Programming (OOP) principles. Provides core university functions including managing courses, student registration, grading, and feedback.
+                                    Achieved 84.76% accuracy in binary classification using a custom CNN. Engineered supervised learning models (SVM, Random Forest) with HOG, LBP, and SIFT features (78% accuracy).
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-2 project-list">
-                    <div class="project-tile">
+                    <div class="project-tile hidden-el delay-100">
                         <img src="https://hackernoon.imgix.net/images/RXadfDF7FAUpoNxhRqBIwlyiOM02-l0a3vkc.jpeg?w=1200&q=75&auto=format"
                             alt="RISC-V Assembler" />
                         <div class="overlay">
@@ -189,7 +189,7 @@ Outside of academics, I have been actively involved in various roles that helped
                             </div>
                         </div>
                     </div>
-                    <div class="project-tile">
+                    <div class="project-tile hidden-el delay-200">
                         <img src="https://i.pinimg.com/736x/cb/15/9f/cb159fc5133abc096af1f29a8c03a7cb.jpg"
                             alt="SahaYan" />
                         <div class="overlay">
@@ -202,28 +202,39 @@ Outside of academics, I have been actively involved in various roles that helped
                         </div>
                     </div>
                 </div>
-                <a href="https://github.com/WarHawkADI?tab=repositories" class="cta" target="_blank">see more...</a>
+                <a href="https://github.com/WarHawkADI?tab=repositories" class="cta" target="_blank" rel="noopener noreferrer">see more...</a>
             </section>
 
             <!--=============== EXPERIENCE ===============-->
             <section class="content-card experience" id="experience">
-                <h1>Experience</h1>
+                <h1 class="hidden-el">Experience</h1>
                 <div class="timeline">
                     <div class="timeline-items">
-                        <div class="timeline-item">
-                            <div class="timeline-date">May-July 2025</div>
+                        <div class="timeline-item hidden-el delay-100">
+                            <div class="timeline-date">Aug-Oct 2025</div>
                             <div class="timeline-content">
-                                <h3>Summer Intern</h3>
-                                <p>HCITech</p>
+                                <h3>SDE Intern</h3>
+                                <p>LogiCoy</p>
                                 <ul>
-                                    <li>Developed Integrated Revenue Forecasting System (IRFS) to optimize financial planning for quarterly project portfolios</li>
-                                    <li>Streamlined revenue prediction by architecting automated data workflows</li>
-                                    <li>Pioneered a threshold alert system to flag project budget variances, reducing fiscal risks by 30%</li>
-                                    <li>Designed executive dashboards with drill-down capabilities for revenue streams and cost analysis</li>
+                                    <li>Orchestrated a high-throughput reporting service processing 10M+ records via Elasticsearch Scroll API, reducing generation time by 30x</li>
+                                    <li>Implemented a Release History Management API with dual-write synchronization between MySQL and Elasticsearch</li>
+                                    <li>Automated regulatory tracking by developing Master File Dashboard RESTful APIs with Cron jobs</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item hidden-el delay-200">
+                            <div class="timeline-date">May-July 2025</div>
+                            <div class="timeline-content">
+                                <h3>Summer Intern</h3>
+                                <p>HCLTech</p>
+                                <ul>
+                                    <li>Architected an end-to-end Integrated Revenue Forecasting System (IRFS) which enhanced financial planning accuracy by 15%</li>
+                                    <li>Streamlined ETL processes by engineering automated data pipelines, reducing manual processing time by 90%</li>
+                                    <li>Deployed interactive data visualization dashboards with drill-down capabilities, improving insight generation by 25%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item hidden-el delay-300">
                             <div class="timeline-date">March-April 2025</div>
                             <div class="timeline-content">
                                 <h3>Software Development Intern</h3>
@@ -232,7 +243,7 @@ Outside of academics, I have been actively involved in various roles that helped
                                     <li>Developed end-to-end real-time user analytics system using Spring Boot, Elasticsearch, and Kafka</li>
                                     <li>Implemented data processing pipelines for handling high-volume user activity streams</li>
                                     <li>Built dashboard interfaces with Modern Web Stack for visualizing analytics data</li>
-                                    <li>Enhanced indexing strategies and implemented advanced filtering techniques for seamless interaction tracking</li>
+                                    <li>Refined Elasticsearch indexing strategies and implemented advanced filtering, slashing analytics query latency by 40%</li>
                                 </ul>
                             </div>
                         </div>
@@ -242,8 +253,8 @@ Outside of academics, I have been actively involved in various roles that helped
 
             <!--=============== CONTACT ===============-->
             <section class="content-card contact" id="contact">
-                <h1>Contact Me</h1>
-                <form action="https://formspree.io/f/xgvollnv" method="POST">
+                <h1 class="hidden-el">Contact Me</h1>
+                <form action="https://formspree.io/f/xgvollnv" method="POST" class="hidden-el delay-100">
                     <div class="input-box">
                         <input type="text" class="text-input" name="name" placeholder="Name" required />
                     </div>
@@ -264,44 +275,17 @@ Outside of academics, I have been actively involved in various roles that helped
                 <section id="satisfaction-section">
                     <h1>Rate Your Experience</h1>
                     <div id="emoji-container">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f621.png" class="emoji" data-value="1" onclick="selectEmoji(this)" alt="😡">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f615.png" class="emoji" data-value="2" onclick="selectEmoji(this)" alt="😕">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f610.png" class="emoji" data-value="3" onclick="selectEmoji(this)" alt="😐">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60a.png" class="emoji" data-value="4" onclick="selectEmoji(this)" alt="😊">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60d.png" class="emoji" data-value="5" onclick="selectEmoji(this)" alt="😍">
+                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f621.png" class="emoji" data-value="1" alt="😡">
+                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f615.png" class="emoji" data-value="2" alt="😕">
+                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f610.png" class="emoji" data-value="3" alt="😐">
+                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60a.png" class="emoji" data-value="4" alt="😊">
+                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60d.png" class="emoji" data-value="5" alt="😍">
                     </div>
                 </section>
             </section>
         </div>
     </div>
     <script src="script.js"></script>
-    
-    <script>
-        window.addEventListener("load", function () {
-            setTimeout(function () {
-                let loader = document.getElementById("loader");
-                let content = document.getElementById("content");
-        
-                loader.classList.add("hidden"); // Apply fade-out class
-                
-                setTimeout(function () {
-                    loader.style.display = "none"; // Hide loader completely
-                    content.style.opacity = "1"; // Fade in content smoothly
-                }, 800); // Matches CSS fade-out transition time
-            }, 3000); // Loader stays for 3 seconds before fading out
-        });
-    </script>
-      
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add("loading");
-      
-            // Remove loading cursor after 3 seconds
-            setTimeout(function() {
-                document.body.classList.remove("loading");
-            }, 3000);
-        });
-    </script>
 </body>
 </html>
 
