@@ -1,8 +1,6 @@
-
-let visitCount = getCookie("visitCount") || 0;
-
-document.getElementById("visit-counter").innerText = visitCount;
+let visitCount = Number(getCookie("visitCount")) || 0;
 visitCount++;
+document.getElementById("visit-counter").innerText = visitCount;
 document.cookie = `visitCount=${visitCount}; expires=${getCookieExpirationDate()}; path=/`;
 
 function getCookie(name) {
@@ -66,7 +64,6 @@ ball.style.height = '20px';
 // Start the ball following the mouse movement
 followMouse();
 
-
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevents default form submission (page reload)
     var form = this;
@@ -84,12 +81,62 @@ document.querySelector("form").addEventListener("submit", function (event) {
         }
     }).catch(() => alert("Error connecting to the server. Try again later."));
 });
-function selectEmoji(selected) {
-    // Remove "active" class from all emojis
-    document.querySelectorAll(".emoji").forEach(emoji => {
-        emoji.classList.remove("active");
-    });
 
-    // Add "active" class to the clicked emoji
-    selected.classList.add("active");
-}
+// --- Loader Logic ---
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        let loader = document.getElementById("loader");
+        let content = document.querySelector(".content");
+
+        if (loader) {
+            loader.classList.add("hidden"); // Apply fade-out class
+        }
+        
+        setTimeout(function () {
+            if (loader) loader.style.display = "none"; // Hide loader completely
+            if (content) content.style.opacity = "1"; // Fade in content smoothly
+        }, 800); // Matches CSS fade-out transition time
+    }, 3000); // Loader stays for 3 seconds before fading out
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loading");
+
+    // Remove loading cursor after 3 seconds
+    setTimeout(function() {
+        document.body.classList.remove("loading");
+    }, 3000);
+});
+
+// --- Emoji Selection ---
+document.addEventListener('DOMContentLoaded', () => {
+    const emojis = document.querySelectorAll('.emoji');
+    emojis.forEach(emoji => {
+        emoji.addEventListener('click', function() {
+            // Remove "active" class from all emojis
+            emojis.forEach(e => e.classList.remove("active"));
+            // Add "active" class to the clicked emoji
+            this.classList.add("active");
+        });
+    });
+});
+
+// --- Scroll Reveal Animation ---
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-el');
+            observer.unobserve(entry.target); // Only animate once
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hiddenElements = document.querySelectorAll('.hidden-el');
+    hiddenElements.forEach((el) => observer.observe(el));
+});
