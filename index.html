@@ -3,289 +3,908 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    <title>Aditya Rai</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+    <title>Aditya Rai — Software Engineer</title>
+    <meta name="description"
+        content="Aditya Rai — B.Tech CSE at IIIT-Delhi. Software engineer building data platforms, distributed backends and applied-AI systems. Ex-TBO.com, LogiCoy, HCLTech.">
+    <meta name="author" content="Aditya Rai">
+    <link rel="canonical" href="https://warhawkadi.github.io/">
+
+    <meta name="theme-color" content="#faf8f6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://warhawkadi.github.io/">
+    <meta property="og:title" content="Aditya Rai — Software Engineer">
+    <meta property="og:description"
+        content="B.Tech CSE at IIIT-Delhi. Data platforms, distributed backends and applied-AI systems. Ex-TBO.com, LogiCoy, HCLTech.">
+    <meta property="og:image" content="https://warhawkadi.github.io/favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aditya Rai — Software Engineer">
+    <meta name="twitter:description"
+        content="B.Tech CSE at IIIT-Delhi. Data platforms, distributed backends and applied-AI systems.">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Applied before first paint so there is no flash of the wrong theme. -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                var saved = localStorage.getItem('theme');
+                root.dataset.theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            } catch (e) {
+                root.dataset.theme = 'dark';
+            }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aditya Rai",
+        "url": "https://warhawkadi.github.io/",
+        "email": "aditya23047@iiitd.ac.in",
+        "jobTitle": "Software Engineer",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Indraprastha Institute of Information Technology Delhi"
+        },
+        "address": { "@type": "PostalAddress", "addressLocality": "Ghaziabad", "addressCountry": "IN" },
+        "knowsAbout": ["Data Engineering", "Distributed Systems", "Machine Learning", "Java", "Python", "AWS"],
+        "sameAs": [
+            "https://github.com/WarHawkADI",
+            "https://www.linkedin.com/in/aditya-rai-885666167"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <div id="loader">
-        <div id="load">
-          <div>G</div>
-          <div>N</div>
-          <div>I</div>
-          <div>D</div>
-          <div>A</div>
-          <div>O</div>
-          <div>L</div>
-        </div>
-      </div>
-      
-    <!--Waves Container-->
-<div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-      </defs>
-      <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-      </g>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--=============== ICON SPRITE ===============-->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z" />
+        </symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3-.02-3-1.85-3-1.85 0-2.13 1.44-2.13 2.9V21H9z" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 6-10 7L2 6" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+        </symbol>
+        <symbol id="i-file" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <path d="M14 2v6h6M9 15h6M9 11h2" />
+        </symbol>
+        <symbol id="i-arrow-out" viewBox="0 0 24 24">
+            <path d="M7 17 17 7M8 7h9v9" />
+        </symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </symbol>
+        <symbol id="i-arrow-down" viewBox="0 0 24 24">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+        </symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+            <path d="M18 6 6 18M6 6l12 12" />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24">
+            <path d="M6 4h12v5a6 6 0 0 1-12 0z" />
+            <path d="M6 5H3.5A2.5 2.5 0 0 0 6 9.5M18 5h2.5A2.5 2.5 0 0 1 18 9.5M9 20h6M12 15v5" />
+        </symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24">
+            <path d="M12 3 2 8l10 5 10-5-10-5z" />
+            <path d="M6 11v5c3.5 3 8.5 3 12 0v-5" />
+        </symbol>
+        <symbol id="i-code" viewBox="0 0 24 24">
+            <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
+        </symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24">
+            <path d="M12 2 2 7l10 5 10-5-10-5z" />
+            <path d="m2 17 10 5 10-5M2 12l10 5 10-5" />
+        </symbol>
+        <symbol id="i-db" viewBox="0 0 24 24">
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+            <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+        </symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24">
+            <path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6.5 6.5 0 0 0 5.2 11.2 3.9 3.9 0 0 0 6 19z" />
+        </symbol>
+        <symbol id="i-flow" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="7" height="6" rx="1.5" />
+            <rect x="15" y="15" width="7" height="6" rx="1.5" />
+            <path d="M9 6h5a4 4 0 0 1 4 4v5" />
+        </symbol>
+        <symbol id="i-server" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="7" rx="2" />
+            <rect x="2" y="14" width="20" height="7" rx="2" />
+            <path d="M6 6.5h.01M6 17.5h.01" />
+        </symbol>
+        <symbol id="i-brain" viewBox="0 0 24 24">
+            <path d="M12 4.5a3 3 0 0 0-5.9-.7A2.8 2.8 0 0 0 3.4 7a2.9 2.9 0 0 0-.4 5A3 3 0 0 0 5 17.5a3 3 0 0 0 5.9.9A2.5 2.5 0 0 0 12 20z" />
+            <path d="M12 4.5a3 3 0 0 1 5.9-.7A2.8 2.8 0 0 1 20.6 7a2.9 2.9 0 0 1 .4 5A3 3 0 0 1 19 17.5a3 3 0 0 1-5.9.9A2.5 2.5 0 0 1 12 20z" />
+        </symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="12" height="12" rx="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+            <path d="m20 6-11 11-5-5" />
+        </symbol>
+        <symbol id="i-send" viewBox="0 0 24 24">
+            <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" />
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24">
+            <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+        </symbol>
     </svg>
-  </div>
-  <!--Waves end-->
-  
-    <div class="wrap">
-		<div id="ball"></div>
-	</div>
-    
-    <div class="counter-container">
-        <span id="visit-counter">0</span>
-    </div>
 
-    <nav id="navbar" class="navbar"></nav>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<div class="container">
-    <!--=============== NAVIGATION MENU ===============-->
-    <div class="menu">
-        <a href="#welcome-section" class="menu-icon fas fa-home" aria-label="Home"></a>
-        <a href="#about" class="menu-icon fas fa-user" aria-label="About"></a>
-        <a href="#projects" class="menu-icon fas fa-code" aria-label="Projects"></a>
-        <a href="#experience" class="menu-icon fas fa-briefcase" aria-label="Experience"></a>
-        <a href="#contact" class="menu-icon fas fa-envelope" aria-label="Contact"></a>
-    </div>
+    <!--=============== NAV ===============-->
+    <header class="nav" id="nav">
+        <div class="shell nav__inner">
+            <a class="brand" href="#top" aria-label="Aditya Rai — home">
+                <span class="brand__mark">AR</span>
+                <span class="brand__text">Aditya&nbsp;Rai</span>
+            </a>
 
-    <!--=============== MAIN "WINDOW" ===============-->
-    <div class="portfolio">
-        <!--=============== HEADER SECTION ===============-->
-        <section class="header">
-            <img class="header-img"
-                src="https://i.pinimg.com/1200x/62/5f/74/625f74e15a35126a59d1fc9f3f905c80.jpg"
-                alt="" />
-            <h1>Aditya Rai</h1>
-            <h2>B.Tech (CSE) @ IIIT Delhi | 2023-2027</h2>
-            <h2>"Computer viruses are an urban legend."</h2>
-            <div class="socials">
-                <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank" rel="noopener noreferrer" class="fab fa-linkedin-in" aria-label="LinkedIn Profile"></a>
-                <a href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer" class="fab fa-github" aria-label="GitHub Profile"></a>
-            </div>
-            <a href="https://drive.google.com/file/d/1fIjLao-wOGOUDK5oVgKWib2ewd5hmjKx/view?usp=sharing" class="cta" target="_blank" rel="noopener noreferrer"><h3>View Resume</h3></a>
-        </section>
-
-        <!--=============== CONTENT SECTION ===============-->
-        <div class="content">
-            <!--=============== HOME ===============-->
-            <section class="content-card home" id="welcome-section">
-                <h1 class="hidden-el">Hey, I am Aditya Rai</h1>
-                <h2 class="hidden-el delay-100">Computer Science Engineer | Tech Enthusiast</h2>
-                <h3 class="hidden-el delay-200">Building innovative solutions through code</h3>
-                <h3 class="hidden-el delay-300">Passionate about software development and machine learning</h3>
-            </section>
-
-            <!--=============== ABOUT ME ===============-->
-            <section class="content-card about" id="about">
-                <h1 class="hidden-el">About me</h1>
-                <div class="about-item about-me hidden-el delay-100">
-                    <p>I’m Aditya Rai, an undergraduate student currently pursuing my Bachelor’s in Computer Science at IIIT Delhi. I am a curious and driven individual who values continuous learning, discipline, and meaningful contribution.
-</p>
-                    <p>
-Throughout my academic journey, I have developed a strong interest in problem-solving, leadership, and personal growth. I enjoy working in collaborative environments where ideas can grow and challenges can be turned into opportunities.
-
-Outside of academics, I have been actively involved in various roles that helped me build confidence, communication, and creativity.
-
-
-
-
-                    </p>
-<p>I believe in staying humble, working hard, and growing with purpose.
-</p>
+            <nav class="nav__links" id="nav-links" aria-label="Primary">
+                <a href="#about"><span>About</span></a>
+                <a href="#experience"><span>Experience</span></a>
+                <a href="#projects"><span>Projects</span></a>
+                <a href="#skills"><span>Skills</span></a>
+                <a href="#honors"><span>Honors</span></a>
+                <a href="#contact"><span>Contact</span></a>
+                <div class="nav__drawer-foot">
+                    <a class="btn btn--solid btn--full"
+                        href="https://drive.google.com/file/d/1kPprA5LHrzW2s9BA5_UDVGF-U4KCWyJN/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg class="icon"><use href="#i-file" /></svg> Download résumé
+                    </a>
+                    <div class="nav__drawer-socials">
+                        <a href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub"><svg class="icon icon--brand"><use href="#i-github" /></svg></a>
+                        <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon icon--brand"><use
+                                    href="#i-linkedin" /></svg></a>
+                        <a href="mailto:aditya23047@iiitd.ac.in" aria-label="Email"><svg class="icon"><use
+                                    href="#i-mail" /></svg></a>
+                    </div>
                 </div>
-                <div class="col-2">
-                    <div class="about-item skills hidden-el delay-200">
-                        <h1>Skills</h1>
-                        <span class="skill">Java</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">C++</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">SQL</span>
-                        <span class="skill">Spring Boot</span>
-                        <span class="skill">Elasticsearch</span>
-                        <span class="skill">Kafka</span>
-                        <span class="skill">RabbitMQ</span>
-                        <span class="skill">AngularJS</span>
-                        <span class="skill">React</span>
-                        <span class="skill">Git</span>
-                        <span class="skill">Docker</span>
-                        <span class="skill">MySQL</span>
-                        <span class="skill">MongoDB</span>
-                        <span class="skill">Scikit-learn</span>
-                        <span class="skill">PyTorch</span>
-                        <span class="skill">TensorFlow</span>
-                        <span class="skill">Linux</span>
-                        <span class="skill">Postman</span>
+            </nav>
+
+            <div class="nav__actions">
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme"
+                    title="Toggle theme (T)">
+                    <svg class="icon icon--sun"><use href="#i-sun" /></svg>
+                    <svg class="icon icon--moon"><use href="#i-moon" /></svg>
+                </button>
+                <a class="btn btn--sm btn--solid nav__resume" data-magnetic
+                    href="https://drive.google.com/file/d/1kPprA5LHrzW2s9BA5_UDVGF-U4KCWyJN/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg class="icon"><use href="#i-file" /></svg> Résumé
+                </a>
+                <button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Open menu"
+                    aria-expanded="false" aria-controls="nav-links">
+                    <svg class="icon icon--open"><use href="#i-menu" /></svg>
+                    <svg class="icon icon--close"><use href="#i-close" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!--=============== HERO ===============-->
+        <section class="hero" id="top">
+            <div class="hero__bg" aria-hidden="true">
+                <span class="orb orb--1"></span>
+                <span class="orb orb--2"></span>
+                <span class="grid"></span>
+            </div>
+
+            <div class="shell hero__inner">
+                <div class="hero__copy">
+                    <p class="eyebrow" data-reveal>
+                        <span class="dot"></span> Open to SDE &amp; Data Engineering roles &middot; 2027
+                    </p>
+
+                    <h1 class="hero__title" id="hero-title" data-reveal style="--d:60ms">Aditya Rai</h1>
+
+                    <p class="hero__role" data-reveal style="--d:120ms">
+                        <span class="hero__role-static">I build</span>
+                        <span class="type" id="typed" aria-live="polite"></span><span class="caret"
+                            aria-hidden="true"></span>
+                    </p>
+
+                    <p class="hero__lede" data-reveal style="--d:180ms">
+                        Final-year CSE undergrad at <strong>IIIT-Delhi</strong>, working where backend systems meet data
+                        at scale — enterprise data graphs, streaming pipelines that clear
+                        <strong>100K&nbsp;events/min</strong>, and agentic AI that has to be auditable, not just
+                        impressive.
+                    </p>
+
+                    <div class="hero__cta" data-reveal style="--d:240ms">
+                        <a class="btn btn--solid" href="#projects" data-magnetic>
+                            <svg class="icon"><use href="#i-spark" /></svg> See my work
+                        </a>
+                        <a class="btn btn--ghost" href="#contact" data-magnetic>
+                            <svg class="icon"><use href="#i-mail" /></svg> Get in touch
+                        </a>
                     </div>
 
-                    <div class="about-item achievements hidden-el delay-300">
-                        <h1>Achievements</h1>
-                        <ul>
-                            <li>Rank 1 & Semi-finalist in Goldman Sachs India Hackathon 2025</li>
-                            <li>Selected for Amazon ML Summer School 2025</li>
-                            <li>AIR 6841 in JEE Advanced; 99.45%ile in JEE Mains</li>
-                            <li>Selected for Indian National Mathematical Olympiad (INMO) & INAO</li>
-                            <li>Solved 400+ problems across Leetcode, HackerRank & GFG</li>
+                    <div class="hero__socials" data-reveal style="--d:300ms">
+                        <a href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <svg class="icon icon--brand"><use href="#i-github" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg class="icon icon--brand"><use href="#i-linkedin" /></svg>
+                        </a>
+                        <a href="mailto:aditya23047@iiitd.ac.in" aria-label="Email">
+                            <svg class="icon"><use href="#i-mail" /></svg>
+                        </a>
+                        <span class="hero__socials-sep" aria-hidden="true"></span>
+                        <span class="hero__loc">
+                            <svg class="icon"><use href="#i-pin" /></svg> Ghaziabad, India
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-reveal style="--d:200ms">
+                    <div class="avatar" data-tilt>
+                        <span class="avatar__mono" aria-hidden="true">AR</span>
+                        <!-- TO ADD YOUR PHOTO: save it as assets/profile.jpg, then uncomment the next line. -->
+                        <!-- <img src="assets/profile.jpg" alt="Aditya Rai"> -->
+                    </div>
+                    <span class="chip chip--1">Spring&nbsp;Boot</span>
+                    <span class="chip chip--2">Kafka</span>
+                    <span class="chip chip--3">AWS&nbsp;Glue</span>
+                    <span class="chip chip--4">Neo4j</span>
+                </div>
+            </div>
+
+            <div class="shell">
+                <ul class="stats" data-reveal style="--d:360ms">
+                    <li><b data-count="3">3</b><span>Engineering internships</span></li>
+                    <li><b data-count="100" data-suffix="K+">100K+</b><span>Events/min in production</span></li>
+                    <li><b data-count="2" data-suffix="&times;">2&times;</b><span>National hackathon podiums</span></li>
+                    <li><b data-count="400" data-suffix="+">400+</b><span>DSA problems solved</span></li>
+                </ul>
+            </div>
+
+            <a class="scroll-hint" href="#about" aria-label="Scroll to about">
+                <svg class="icon"><use href="#i-arrow-down" /></svg>
+            </a>
+        </section>
+
+        <!--=============== TECH MARQUEE ===============-->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <div class="marquee__group">
+                    <span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>Apache Kafka</span><i>◆</i>
+                    <span>Elasticsearch</span><i>◆</i><span>Python</span><i>◆</i><span>AWS Glue</span><i>◆</i>
+                    <span>Athena</span><i>◆</i><span>Redshift</span><i>◆</i><span>Neo4j</span><i>◆</i>
+                    <span>Docker</span><i>◆</i><span>React</span><i>◆</i><span>Next.js</span><i>◆</i>
+                    <span>PyTorch</span><i>◆</i><span>PostgreSQL</span><i>◆</i>
+                </div>
+                <div class="marquee__group">
+                    <span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>Apache Kafka</span><i>◆</i>
+                    <span>Elasticsearch</span><i>◆</i><span>Python</span><i>◆</i><span>AWS Glue</span><i>◆</i>
+                    <span>Athena</span><i>◆</i><span>Redshift</span><i>◆</i><span>Neo4j</span><i>◆</i>
+                    <span>Docker</span><i>◆</i><span>React</span><i>◆</i><span>Next.js</span><i>◆</i>
+                    <span>PyTorch</span><i>◆</i><span>PostgreSQL</span><i>◆</i>
+                </div>
+            </div>
+        </div>
+
+        <!--=============== ABOUT ===============-->
+        <section class="section" id="about">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">01 — About</p>
+                    <h2 class="section__title">Engineer first, curious always</h2>
+                </header>
+
+                <div class="about">
+                    <div class="about__prose" data-reveal style="--d:80ms">
+                        <p class="about__lead">
+                            I'm a Computer Science undergrad at <strong>IIIT-Delhi</strong> who gravitated toward the
+                            unglamorous half of software — the part where data has to arrive on time, stay correct, and
+                            explain itself afterwards.
+                        </p>
+                        <p>
+                            That pull has taken me through three internships: modelling an <strong>enterprise data
+                                graph</strong> and building AWS Glue/Athena pipelines at TBO.com, running a
+                            <strong>real-time analytics platform</strong> on Spring Boot, Kafka and Elasticsearch at
+                            LogiCoy, and shipping an <strong>ML revenue-forecasting system</strong> at HCLTech. The
+                            through-line is the same: make the pipeline dependable, then make it fast.
+                        </p>
+                        <p>
+                            Outside of coursework I'm usually mid-hackathon. That's where <em>Drishti</em> and <em>TBO
+                                Assemble</em> came from — projects built under a clock, which turns out to be a good
+                            forcing function for deciding what actually matters. I like teams that argue well, ship
+                            often, and stay humble about it.
+                        </p>
+                    </div>
+
+                    <aside class="about__side" data-reveal style="--d:160ms">
+                        <div class="card card--edu" data-tilt data-spotlight>
+                            <div class="card__icon"><svg class="icon"><use href="#i-cap" /></svg></div>
+                            <p class="card__label">Education</p>
+                            <h3>B.Tech, Computer Science &amp; Engineering</h3>
+                            <p class="card__meta">IIIT-Delhi &middot; Aug 2023 – 2027</p>
+                        </div>
+
+                        <dl class="facts">
+                            <div>
+                                <dt>Focus</dt>
+                                <dd>Backend &middot; Data Engineering &middot; Applied AI</dd>
+                            </div>
+                            <div>
+                                <dt>Currently</dt>
+                                <dd>Final year at IIIT-Delhi</dd>
+                            </div>
+                            <div>
+                                <dt>Based in</dt>
+                                <dd>Vasundhara, Ghaziabad — open to relocation</dd>
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+
+                <!-- What I do -->
+                <div class="pillars">
+                    <article class="pillar" data-reveal data-tilt data-spotlight>
+                        <div class="pillar__icon"><svg class="icon"><use href="#i-server" /></svg></div>
+                        <h3>Backend &amp; Distributed Systems</h3>
+                        <p>Spring Boot services, Kafka streams and Elasticsearch clusters built for throughput —
+                            100K+ events per minute, 40% lower query latency, dual-write consistency with zero data
+                            loss.</p>
+                    </article>
+
+                    <article class="pillar" data-reveal style="--d:80ms" data-tilt data-spotlight>
+                        <div class="pillar__icon"><svg class="icon"><use href="#i-flow" /></svg></div>
+                        <h3>Data Engineering</h3>
+                        <p>AWS Glue ETL over S3 data lakes, tuned Athena queries, Redshift analytics models and
+                            ontology-driven data graphs — with the quality validations that keep the numbers
+                            trustworthy.</p>
+                    </article>
+
+                    <article class="pillar" data-reveal style="--d:160ms" data-tilt data-spotlight>
+                        <div class="pillar__icon"><svg class="icon"><use href="#i-brain" /></svg></div>
+                        <h3>Applied AI</h3>
+                        <p>LightGBM risk models, CNN classifiers and LLM document intelligence — shipped with
+                            deterministic policy layers and tamper-evident audit trails, at sub-10&nbsp;ms inference.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== EXPERIENCE ===============-->
+        <section class="section section--alt" id="experience">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">02 — Experience</p>
+                    <h2 class="section__title">Where I've shipped</h2>
+                </header>
+
+                <ol class="timeline">
+                    <li class="tl" data-reveal>
+                        <span class="tl__node" aria-hidden="true"></span>
+                        <div class="tl__aside">
+                            <p class="tl__date">May 2026 – Jul 2026</p>
+                            <p class="tl__place">Gurgaon</p>
+                        </div>
+                        <div class="tl__body">
+                            <h3 class="tl__role">Software Engineering Intern</h3>
+                            <p class="tl__org">TBO.com</p>
+                            <ul class="tl__points">
+                                <li>Contributed to an <strong>Enterprise Data Graph</strong> platform through
+                                    ontology-driven entity modelling, relationship analysis and AI-enabled business
+                                    intelligence workflows.</li>
+                                <li>Developed <strong>AWS Glue ETL</strong> jobs and optimised <strong>Athena</strong>
+                                    queries over Amazon S3 data lakes for scalable KPI computation and analytics
+                                    workloads.</li>
+                                <li>Built KPI computation frameworks, data-quality validations and
+                                    <strong>Redshift</strong> analytics models supporting enterprise-scale reporting.
+                                </li>
+                            </ul>
+                            <ul class="tags">
+                                <li>AWS Glue</li>
+                                <li>Athena</li>
+                                <li>S3</li>
+                                <li>Redshift</li>
+                                <li>Neo4j</li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl" data-reveal style="--d:80ms">
+                        <span class="tl__node" aria-hidden="true"></span>
+                        <div class="tl__aside">
+                            <p class="tl__date">Aug 2025 – Oct 2025</p>
+                            <p class="tl__place">Remote</p>
+                        </div>
+                        <div class="tl__body">
+                            <h3 class="tl__role">SDE Intern</h3>
+                            <p class="tl__org">LogiCoy</p>
+                            <ul class="tl__points">
+                                <li>Spearheaded a real-time user analytics system on <strong>Java Spring Boot,
+                                        Elasticsearch and Apache Kafka</strong>, processing over
+                                    <strong>100,000&nbsp;events per minute</strong>.</li>
+                                <li>Refined Elasticsearch indexing strategies and integrated advanced filtering, cutting
+                                    analytics query latency by <strong>40%</strong>.</li>
+                                <li>Implemented Release History Management <strong>REST APIs</strong> with dual-write
+                                    sync between MySQL and Elasticsearch — <strong>zero data loss</strong> across
+                                    50K+ versioned records, covered by JUnit.</li>
+                            </ul>
+                            <ul class="tags">
+                                <li>Java</li>
+                                <li>Spring Boot</li>
+                                <li>Elasticsearch</li>
+                                <li>Apache Kafka</li>
+                                <li>MySQL</li>
+                                <li>JUnit</li>
+                                <li>REST APIs</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="tl" data-reveal style="--d:160ms">
+                        <span class="tl__node" aria-hidden="true"></span>
+                        <div class="tl__aside">
+                            <p class="tl__date">May 2025 – Jul 2025</p>
+                            <p class="tl__place">Noida</p>
+                        </div>
+                        <div class="tl__body">
+                            <h3 class="tl__role">Summer Intern</h3>
+                            <p class="tl__org">HCLTech</p>
+                            <ul class="tl__points">
+                                <li>Architected an end-to-end <strong>ML-based Revenue Forecasting Platform</strong>
+                                    using Python, Scikit-learn, SQL and automated ETL pipelines — forecasting accuracy
+                                    up <strong>15%</strong>, manual effort down <strong>90%</strong>.</li>
+                                <li>Integrated interactive business-intelligence dashboards in <strong>React</strong>
+                                    and JavaScript, enabling drill-down analytics and improving insight generation by
+                                    <strong>25%</strong>.</li>
+                            </ul>
+                            <ul class="tags">
+                                <li>Python</li>
+                                <li>Scikit-learn</li>
+                                <li>SQL</li>
+                                <li>ETL</li>
+                                <li>React</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!--=============== PROJECTS ===============-->
+        <section class="section" id="projects">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">03 — Projects</p>
+                    <h2 class="section__title">Things I've built</h2>
+                    <p class="section__sub">Two flagships up front, then the ones that taught me the fundamentals.</p>
+                </header>
+
+                <div class="filters" role="group" aria-label="Filter projects by category" data-reveal>
+                    <button class="filter is-active" type="button" aria-pressed="true" data-filter="all">All</button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="ai">AI &amp; ML</button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="backend">Backend</button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="systems">Systems</button>
+                    <button class="filter" type="button" aria-pressed="false" data-filter="product">Product</button>
+                </div>
+
+                <div class="features" id="features">
+                    <!-- TODO: swap the href for the exact repo URL when you have it. -->
+                    <article class="feature" data-cat="ai backend" data-reveal data-tilt data-spotlight>
+                        <div class="feature__top">
+                            <span class="feature__badge">Flagship</span>
+                            <span class="feature__date">May – Jun 2026</span>
+                        </div>
+                        <h3 class="feature__title">Drishti — Agentic AI Loan Officer</h3>
+                        <p class="feature__desc">
+                            An agentic underwriting platform that collapses a <strong>40+ field loan form</strong> into
+                            a five-minute voice conversation. Behind the voice sits a deterministic credit-policy
+                            engine, <strong>LightGBM</strong> risk scoring, three-stage fraud detection and a
+                            tamper-evident <strong>SHA-256 audit chain</strong> — so every decision can be replayed and
+                            defended.
+                        </p>
+                        <ul class="metrics">
+                            <li><b>&lt;10&nbsp;ms</b><span>model inference</span></li>
+                            <li><b>1.21&nbsp;s</b><span>median response</span></li>
+                            <li><b>40+ → 0</b><span>form fields</span></li>
+                        </ul>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Next.js</li>
+                            <li>Claude</li>
+                            <li>LightGBM</li>
+                            <li>AWS</li>
+                        </ul>
+                        <a class="feature__link" href="https://github.com/WarHawkADI?tab=repositories" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub <svg class="icon"><use href="#i-arrow-out" /></svg>
+                        </a>
+                    </article>
+
+                    <article class="feature" data-cat="ai backend" data-reveal style="--d:80ms" data-tilt
+                        data-spotlight>
+                        <div class="feature__top">
+                            <span class="feature__badge">Flagship</span>
+                            <span class="feature__date">Feb – Mar 2026</span>
+                        </div>
+                        <h3 class="feature__title">TBO Assemble — AI Group Travel Platform</h3>
+                        <p class="feature__desc">
+                            A SaaS platform that reads hotel contracts so humans don't have to. OCR and PDF parsing feed
+                            <strong>GPT-4o</strong> document intelligence, which turns unstructured contracts into
+                            structured, queryable data — wired into a backend built for real operational load.
+                        </p>
+                        <ul class="metrics">
+                            <li><b>42+</b><span>REST APIs</span></li>
+                            <li><b>13-model</b><span>relational schema</span></li>
+                            <li><b>Real-time</b><span>sync + analytics</span></li>
+                        </ul>
+                        <ul class="tags">
+                            <li>Next.js</li>
+                            <li>TypeScript</li>
+                            <li>Prisma</li>
+                            <li>SQLite</li>
+                            <li>OpenAI GPT-4o</li>
+                            <li>OCR</li>
+                        </ul>
+                        <a class="feature__link" href="https://github.com/WarHawkADI?tab=repositories" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub <svg class="icon"><use href="#i-arrow-out" /></svg>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="grid-3" id="more-projects">
+                    <article class="pcard" data-cat="ai" data-reveal data-tilt data-spotlight>
+                        <div class="pcard__idx" aria-hidden="true">03</div>
+                        <h3>AI-Generated Image Detection</h3>
+                        <p>Binary classifier separating real photographs from synthetic ones. A custom CNN reached
+                            <strong>84.76%</strong> accuracy; classical SVM and Random Forest baselines over HOG, LBP
+                            and SIFT features held <strong>78%</strong>.</p>
+                        <ul class="tags">
+                            <li>PyTorch</li>
+                            <li>CNN</li>
+                            <li>Scikit-learn</li>
+                            <li>OpenCV</li>
+                        </ul>
+                    </article>
+
+                    <article class="pcard" data-cat="systems" data-reveal style="--d:80ms" data-tilt data-spotlight>
+                        <div class="pcard__idx" aria-hidden="true">04</div>
+                        <h3>RISC-V Assembler &amp; Simulator</h3>
+                        <p>A full assembler and cycle-simulator for the RISC-V ISA, written from scratch in Python —
+                            arithmetic, logical and floating-point instruction support, with register and memory state
+                            traced per cycle.</p>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>Computer Architecture</li>
+                            <li>ISA</li>
+                        </ul>
+                    </article>
+
+                    <article class="pcard" data-cat="systems" data-reveal style="--d:160ms" data-tilt data-spotlight>
+                        <div class="pcard__idx" aria-hidden="true">05</div>
+                        <h3>Angry Birds Clone</h3>
+                        <p>A physics-driven game clone in Java built on OOP principles, using LibGDX for rendering and
+                            Box2D for collision and trajectory simulation — with procedurally generated infinite
+                            levels.</p>
+                        <ul class="tags">
+                            <li>Java</li>
+                            <li>LibGDX</li>
+                            <li>Box2D</li>
+                            <li>OOP</li>
+                        </ul>
+                    </article>
+
+                    <article class="pcard" data-cat="product" data-reveal style="--d:240ms" data-tilt data-spotlight>
+                        <div class="pcard__idx" aria-hidden="true">06</div>
+                        <h3>SahaYan</h3>
+                        <p>A donation platform bridging donors and NGOs for non-monetary giving — routing unused goods
+                            to the people who need them. Designed end-to-end in a team of six.</p>
+                        <ul class="tags">
+                            <li>Product Design</li>
+                            <li>Figma</li>
+                            <li>UX Research</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <p class="filter-empty" id="filter-empty" role="status" hidden>Nothing in this category yet.</p>
+
+                <div class="section__foot" data-reveal>
+                    <a class="btn btn--ghost" href="https://github.com/WarHawkADI?tab=repositories" target="_blank"
+                        rel="noopener noreferrer" data-magnetic>
+                        <svg class="icon icon--brand"><use href="#i-github" /></svg> All repositories
+                        <svg class="icon"><use href="#i-arrow-out" /></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== SKILLS ===============-->
+        <section class="section section--alt" id="skills">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">04 — Skills</p>
+                    <h2 class="section__title">The toolkit</h2>
+                </header>
+
+                <div class="skills">
+                    <div class="skillset" data-reveal data-spotlight>
+                        <h3><svg class="icon"><use href="#i-code" /></svg> Languages</h3>
+                        <ul class="tags tags--lg">
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>SQL</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="skillset" data-reveal style="--d:60ms" data-spotlight>
+                        <h3><svg class="icon"><use href="#i-layers" /></svg> Frameworks &amp; Libraries</h3>
+                        <ul class="tags tags--lg">
+                            <li>Spring Boot</li>
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>FastAPI</li>
+                            <li>AngularJS</li>
+                            <li>Scikit-learn</li>
+                            <li>PyTorch</li>
+                            <li>TensorFlow</li>
+                            <li>Prisma</li>
+                            <li>JUnit</li>
+                        </ul>
+                    </div>
+
+                    <div class="skillset" data-reveal style="--d:120ms" data-spotlight>
+                        <h3><svg class="icon"><use href="#i-db" /></svg> Databases</h3>
+                        <ul class="tags tags--lg">
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Redis</li>
+                            <li>Elasticsearch</li>
+                            <li>Neo4j / Cypher</li>
+                            <li>DynamoDB</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+
+                    <div class="skillset" data-reveal style="--d:180ms" data-spotlight>
+                        <h3><svg class="icon"><use href="#i-cloud" /></svg> Cloud &amp; DevOps</h3>
+                        <ul class="tags tags--lg">
+                            <li>AWS Glue</li>
+                            <li>Athena</li>
+                            <li>S3</li>
+                            <li>Redshift</li>
+                            <li>EC2</li>
+                            <li>Docker</li>
+                            <li>GitHub Actions</li>
+                            <li>Git</li>
+                            <li>Maven</li>
+                            <li>Nginx</li>
+                            <li>Linux</li>
+                        </ul>
+                    </div>
+
+                    <div class="skillset skillset--wide" data-reveal style="--d:240ms" data-spotlight>
+                        <h3><svg class="icon"><use href="#i-flow" /></svg> Data &amp; Architecture</h3>
+                        <ul class="tags tags--lg">
+                            <li>Apache Kafka</li>
+                            <li>RabbitMQ</li>
+                            <li>ETL Pipelines</li>
+                            <li>Data Engineering</li>
+                            <li>Microservices</li>
+                            <li>REST APIs</li>
+                            <li>Agile / Scrum</li>
+                            <li>Postman</li>
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!--=============== PROJECTS ===============-->
-            <section class="content-card projects" id="projects">
-                <h1>Projects</h1>
-                <div class="col-2 project-list">
-                    <div class="project-tile hidden-el delay-100">
-                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eb400a58-933e-4177-b93a-9a567df45100/dfdwtg5-809fd011-3452-4a45-93e2-29fd1739c098.png/v1/fill/w_1037,h_771,q_70,strp/angry_birds_by_captainquack64_dfdwtg5-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQwNCIsInBhdGgiOiJcL2ZcL2ViNDAwYTU4LTkzM2UtNDE3Ny1iOTNhLTlhNTY3ZGY0NTEwMFwvZGZkd3RnNS04MDlmZDAxMS0zNDUyLTRhNDUtOTNlMi0yOWZkMTczOWMwOTgucG5nIiwid2lkdGgiOiI8PTE4ODkifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ztMpNZyI7Eovy7-yvGANgSxTp8YNiJ7Uyzp5mSGixuE"
-                            alt="Angry Birds Clone" />
-                        <div class="overlay">
-                            <div class="project-description">
-                                <h3 class="project-title">ANGRY BIRDS CLONE</h3>
-                                <p class="project-desc">
-                                    Developed a fast-moving GUI-based clone of 'AngryBirds' with customized birds' environmental elements and live background in Java using OOP principles. Added functionality of infinite levels of gameplay using LibGDX & Box2D.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-tile hidden-el delay-200">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
-                            alt="AI Image Detection" />
-                        <div class="overlay">
-                            <div class="project-description">
-                                <h3 class="project-title">AI-Generated Image Detection</h3>
-                                <p class="project-desc">
-                                    Achieved 84.76% accuracy in binary classification using a custom CNN. Engineered supervised learning models (SVM, Random Forest) with HOG, LBP, and SIFT features (78% accuracy).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 project-list">
-                    <div class="project-tile hidden-el delay-100">
-                        <img src="https://hackernoon.imgix.net/images/RXadfDF7FAUpoNxhRqBIwlyiOM02-l0a3vkc.jpeg?w=1200&q=75&auto=format"
-                            alt="RISC-V Assembler" />
-                        <div class="overlay">
-                            <div class="project-description">
-                                <h3 class="project-title">RISC-V ASSEMBLER & SIMULATOR</h3>
-                                <p class="project-desc">
-                                    Created an assembler and simulator in Python that can execute programs of the given ISA. Supports arithmetic, logical, and floating point operations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-tile hidden-el delay-200">
-                        <img src="https://i.pinimg.com/736x/cb/15/9f/cb159fc5133abc096af1f29a8c03a7cb.jpg"
-                            alt="SahaYan" />
-                        <div class="overlay">
-                            <div class="project-description">
-                                <h3 class="project-title">SahaYan</h3>
-                                <p class="project-desc">
-                                    A digital platform acting as a bridge connecting donors and NGOs. Enables non-monetary donations of unused goods to those in need. Developed using Figma & Canva in a team of 6.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://github.com/WarHawkADI?tab=repositories" class="cta" target="_blank" rel="noopener noreferrer">see more...</a>
-            </section>
+        <!--=============== HONORS ===============-->
+        <section class="section" id="honors">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">05 — Honors</p>
+                    <h2 class="section__title">Recognition</h2>
+                </header>
 
-            <!--=============== EXPERIENCE ===============-->
-            <section class="content-card experience" id="experience">
-                <h1 class="hidden-el">Experience</h1>
-                <div class="timeline">
-                    <div class="timeline-items">
-                        <div class="timeline-item hidden-el delay-100">
-                            <div class="timeline-date">Aug-Oct 2025</div>
-                            <div class="timeline-content">
-                                <h3>SDE Intern</h3>
-                                <p>LogiCoy</p>
-                                <ul>
-                                    <li>Orchestrated a high-throughput reporting service processing 10M+ records via Elasticsearch Scroll API, reducing generation time by 30x</li>
-                                    <li>Implemented a Release History Management API with dual-write synchronization between MySQL and Elasticsearch</li>
-                                    <li>Automated regulatory tracking by developing Master File Dashboard RESTful APIs with Cron jobs</li>
-                                </ul>
-                            </div>
+                <div class="honors">
+                    <article class="honor honor--gold" data-reveal data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-trophy" /></svg></div>
+                        <div>
+                            <h3>VOYAGEHACK 3.0 — First Runner-Up</h3>
+                            <p>TBO.com &middot; ranked <strong>top 2 of 11,000+</strong> participants.</p>
                         </div>
-                        <div class="timeline-item hidden-el delay-200">
-                            <div class="timeline-date">May-July 2025</div>
-                            <div class="timeline-content">
-                                <h3>Summer Intern</h3>
-                                <p>HCLTech</p>
-                                <ul>
-                                    <li>Architected an end-to-end Integrated Revenue Forecasting System (IRFS) which enhanced financial planning accuracy by 15%</li>
-                                    <li>Streamlined ETL processes by engineering automated data pipelines, reducing manual processing time by 90%</li>
-                                    <li>Deployed interactive data visualization dashboards with drill-down capabilities, improving insight generation by 25%</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item hidden-el delay-300">
-                            <div class="timeline-date">March-April 2025</div>
-                            <div class="timeline-content">
-                                <h3>Software Development Intern</h3>
-                                <p>LogiCoy</p>
-                                <ul>
-                                    <li>Developed end-to-end real-time user analytics system using Spring Boot, Elasticsearch, and Kafka</li>
-                                    <li>Implemented data processing pipelines for handling high-volume user activity streams</li>
-                                    <li>Built dashboard interfaces with Modern Web Stack for visualizing analytics data</li>
-                                    <li>Refined Elasticsearch indexing strategies and implemented advanced filtering, slashing analytics query latency by 40%</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    </article>
 
-            <!--=============== CONTACT ===============-->
-            <section class="content-card contact" id="contact">
-                <h1 class="hidden-el">Contact Me</h1>
-                <form action="https://formspree.io/f/xgvollnv" method="POST" class="hidden-el delay-100">
-                    <div class="input-box">
-                        <input type="text" class="text-input" name="name" placeholder="Name" required />
+                    <article class="honor honor--gold" data-reveal style="--d:60ms" data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-trophy" /></svg></div>
+                        <div>
+                            <h3>TenzorX 2026 National AI Hackathon — Second Runner-Up</h3>
+                            <p>Poonawalla Fincorp &middot; ranked <strong>top 3 of 27,000+</strong> nationwide.</p>
+                        </div>
+                    </article>
+
+                    <article class="honor honor--gold" data-reveal style="--d:120ms" data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-trophy" /></svg></div>
+                        <div>
+                            <h3>Goldman Sachs India Hackathon 2025 — Rank 1</h3>
+                            <p>Achieved <strong>Rank 1</strong> and selected as a Semi-finalist.</p>
+                        </div>
+                    </article>
+
+                    <article class="honor" data-reveal style="--d:180ms" data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-spark" /></svg></div>
+                        <div>
+                            <h3>Amazon ML Summer School 2025</h3>
+                            <p>Selected for the programme led by Amazon Scientists on advanced ML topics.</p>
+                        </div>
+                    </article>
+
+                    <article class="honor" data-reveal style="--d:240ms" data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-cap" /></svg></div>
+                        <div>
+                            <h3>JEE Advanced AIR 6841</h3>
+                            <p><strong>99.45 percentile</strong> in JEE Mains.</p>
+                        </div>
+                    </article>
+
+                    <article class="honor" data-reveal style="--d:300ms" data-tilt data-spotlight>
+                        <div class="honor__icon"><svg class="icon"><use href="#i-cap" /></svg></div>
+                        <div>
+                            <h3>INMO &amp; INAO</h3>
+                            <p>Selected for the Indian National Mathematical Olympiad and the Astronomy Olympiad.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== CONTACT ===============-->
+        <section class="section section--alt" id="contact">
+            <div class="shell">
+                <header class="section__head" data-reveal>
+                    <p class="section__kicker">06 — Contact</p>
+                    <h2 class="section__title">Let's build something</h2>
+                    <p class="section__sub">Roles, collaborations, or a good technical argument — my inbox is open.</p>
+                </header>
+
+                <div class="contact">
+                    <div class="contact__side" data-reveal>
+                        <a class="line" href="mailto:aditya23047@iiitd.ac.in">
+                            <svg class="icon"><use href="#i-mail" /></svg>
+                            <span><b>Email</b>aditya23047@iiitd.ac.in</span>
+                        </a>
+                        <button class="line line--btn" id="copy-email" type="button">
+                            <svg class="icon icon--copy"><use href="#i-copy" /></svg>
+                            <svg class="icon icon--done"><use href="#i-check" /></svg>
+                            <span><b>Copy address</b><em id="copy-label">Click to copy my email</em></span>
+                        </button>
+                        <a class="line" href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg class="icon icon--brand"><use href="#i-linkedin" /></svg>
+                            <span><b>LinkedIn</b>aditya-rai-885666167</span>
+                        </a>
+                        <a class="line" href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer">
+                            <svg class="icon icon--brand"><use href="#i-github" /></svg>
+                            <span><b>GitHub</b>WarHawkADI</span>
+                        </a>
+                        <a class="line" href="https://drive.google.com/file/d/1kPprA5LHrzW2s9BA5_UDVGF-U4KCWyJN/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg class="icon"><use href="#i-file" /></svg>
+                            <span><b>Résumé</b>Download the latest PDF</span>
+                        </a>
                     </div>
-                    <div class="input-box">
-                        <input type="email" class="text-input" name="email" placeholder="Email" required />
-                    </div>
-                    <div class="input-box">
-                        <input type="text" class="text-input" name="subject" placeholder="Subject" required />
-                    </div>
-                    <div class="input-box">
-                        <textarea name="message" class="message" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="input-box">
-                        <input type="submit" class="submit-btn" value="Submit" />
-                    </div>
-                </form>
-                <!-- Emoji Rating Section -->
-                <section id="satisfaction-section">
-                    <h1>Rate Your Experience</h1>
-                    <div id="emoji-container">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f621.png" class="emoji" data-value="1" alt="😡">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f615.png" class="emoji" data-value="2" alt="😕">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f610.png" class="emoji" data-value="3" alt="😐">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60a.png" class="emoji" data-value="4" alt="😊">
-                      <img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f60d.png" class="emoji" data-value="5" alt="😍">
-                    </div>
-                </section>
-            </section>
+
+                    <form class="contact__form" id="contact-form" action="https://formspree.io/f/xgvollnv" method="POST"
+                        data-reveal style="--d:100ms">
+                        <div class="field">
+                            <input type="text" id="f-name" name="name" placeholder=" " required autocomplete="name">
+                            <label for="f-name">Your name</label>
+                        </div>
+                        <div class="field">
+                            <input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email"
+                                inputmode="email">
+                            <label for="f-email">Email address</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" id="f-subject" name="subject" placeholder=" " required>
+                            <label for="f-subject">Subject</label>
+                        </div>
+                        <div class="field">
+                            <textarea id="f-message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="f-message">Message</label>
+                        </div>
+
+                        <!-- Honeypot: real people never fill this in. -->
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+                            class="honeypot">
+
+                        <button class="btn btn--solid btn--full" type="submit" id="submit-btn">
+                            <svg class="icon"><use href="#i-send" /></svg> <span>Send message</span>
+                        </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell footer__inner">
+            <p>&copy; <span id="year">2026</span> Aditya Rai — built from scratch, no frameworks.</p>
+            <div class="footer__links">
+                <a href="https://github.com/WarHawkADI" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/aditya-rai-885666167" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://drive.google.com/file/d/1kPprA5LHrzW2s9BA5_UDVGF-U4KCWyJN/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer">Résumé</a>
+            </div>
         </div>
-    </div>
+    </footer>
+
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+        <svg class="icon"><use href="#i-arrow-up" /></svg>
+    </button>
+
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
