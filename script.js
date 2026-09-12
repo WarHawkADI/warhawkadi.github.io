@@ -358,7 +358,8 @@
     targets.forEach(function (el) {
       var tilts = el.hasAttribute("data-tilt");
       var spots = el.hasAttribute("data-spotlight");
-      var max = el.classList.contains("avatar") ? 9 : 5;
+      // data-tilt="n" caps the angle; a full-width card needs a gentler one.
+      var max = parseFloat(el.getAttribute("data-tilt")) || (el.classList.contains("avatar") ? 9 : 5);
       var frame = null;
 
       var onMove = function (e) {

@@ -636,6 +636,8 @@ strong {
 
 .eyebrow {
   display: inline-flex;
+  /* On phones the text wraps; balance it rather than orphaning "· 2027". */
+  text-wrap: balance;
   align-items: center;
   gap: .55rem;
   padding: .38rem .9rem .38rem .7rem;
@@ -646,6 +648,71 @@ strong {
   font-weight: 500;
   color: var(--text-dim);
   margin-bottom: 1.4rem;
+}
+
+/* "Winner" pill above the eyebrow. The sheen is a transform sweep on a
+   pseudo-element, so it is composited and costs no layout or paint. */
+.announce {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: .4rem .9rem .4rem .4rem;
+  margin-bottom: .75rem;
+  border-radius: 99px;
+  border: 1px solid rgba(var(--brand-rgb), .4);
+  background: var(--surface);
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--text);
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color .2s;
+}
+
+.announce::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(100deg, transparent 30%, rgba(var(--brand-rgb), .2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: sheen 5s var(--ease) 1.4s infinite;
+}
+
+.announce__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  flex: none;
+  padding: .22rem .6rem;
+  border-radius: 99px;
+  background: var(--brand-grad);
+  color: var(--on-brand);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.announce__tag .icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.2;
+}
+
+.announce__text--short {
+  display: none;
+}
+
+.announce__arrow {
+  width: 14px;
+  height: 14px;
+  color: var(--brand);
+  transition: translate .2s var(--ease);
 }
 
 .dot {
@@ -668,7 +735,8 @@ strong {
 .hero__title .ltr {
   display: inline-block;
   color: var(--text);
-  animation: letterIn .6s var(--ease) both;
+  /* `backwards`, not `both` — see the reveal note in section 10. */
+  animation: letterIn .6s var(--ease) backwards;
   animation-delay: calc(var(--i) * 42ms + 120ms);
   transition: color .2s, transform .2s var(--ease);
 }
@@ -1252,14 +1320,16 @@ strong {
 
 .feature__top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .4rem 1rem;
   margin-bottom: 1rem;
 }
 
 .feature__badge {
   padding: .22rem .65rem;
+  white-space: nowrap;
   border-radius: 99px;
   background: rgba(var(--brand-rgb), .10);
   border: 1px solid rgba(var(--brand-rgb), .35);
@@ -1286,6 +1356,90 @@ strong {
   font-size: .96rem;
 }
 
+.feature__kicker {
+  margin: -.35rem 0 .8rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--brand);
+}
+
+/* Filled variant for award winners. inline-flex is required: the global
+   `svg { display: block }` would otherwise break the badge across lines. */
+.feature__badge--win {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: var(--brand-grad);
+  border-color: transparent;
+  color: var(--on-brand);
+}
+
+.feature__badge--win .icon {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.2;
+}
+
+/* The Mastercard-winning build spans both columns, with a faint ember wash
+   in its corner to set it apart from the other flagships. */
+.feature--wide {
+  grid-column: 1 / -1;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(var(--brand-rgb), .10), transparent 55%),
+    var(--surface);
+}
+
+/* At full width a single text column would run ~1000px wide, so the copy
+   keeps the left column and the metrics move into a column of their own.
+   Named areas keep the markup in the same order as the other flagships,
+   which is also the order it stacks in on narrower screens. */
+@media (min-width: 981px) {
+  .feature--wide {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    grid-template-areas:
+      "top    metrics"
+      "title  metrics"
+      "kicker metrics"
+      "desc   metrics"
+      "tags   metrics"
+      "link   metrics";
+    grid-template-rows: auto auto auto auto auto 1fr;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .feature--wide .feature__top { grid-area: top; }
+  .feature--wide .feature__title { grid-area: title; }
+  .feature--wide .feature__kicker { grid-area: kicker; }
+  .feature--wide .feature__desc { grid-area: desc; }
+  .feature--wide .tags { grid-area: tags; }
+
+  .feature--wide .feature__link {
+    grid-area: link;
+    align-self: end;
+    justify-self: start;
+  }
+
+  .feature--wide .metrics {
+    grid-area: metrics;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0 0 0 clamp(2rem, 4vw, 3.5rem);
+    border-block: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .feature--wide .metrics b {
+    font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  }
+
+  .feature--wide .metrics span {
+    font-size: .82rem;
+  }
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1297,6 +1451,8 @@ strong {
 
 .metrics b {
   display: block;
+  /* A figure like "9 × 3" must never split; the caption wraps instead. */
+  white-space: nowrap;
   font-family: var(--font-display);
   font-size: 1.05rem;
   color: var(--brand);
@@ -1466,6 +1622,65 @@ strong {
 .honor p {
   font-size: .89rem;
   color: var(--text-dim);
+}
+
+/* Headline award: spans the whole row, with a gradient border that slowly
+   orbits the card. --spin is registered in section 10 so it can animate.
+   It is also declared here: where @property is unsupported, an undeclared
+   var(--spin) would invalidate the entire background, card fill included. */
+.honor--feature {
+  --spin: 0deg;
+  grid-column: 1 / -1;
+  gap: 1.4rem;
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    conic-gradient(from var(--spin), var(--brand), var(--brand-2),
+      rgba(var(--brand-rgb), .12) 30%, rgba(var(--brand-rgb), .12) 70%, var(--brand)) border-box;
+  box-shadow: var(--glow);
+  animation: spin 8s linear infinite;
+}
+
+.honor--feature .honor__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+}
+
+.honor--feature .honor__icon .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.honor__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.honor--feature .feature__top {
+  margin-bottom: .75rem;
+}
+
+.honor--feature h3 {
+  font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+  margin-bottom: .6rem;
+}
+
+.honor--feature p {
+  font-size: .96rem;
+  max-width: 72ch;
+}
+
+/* Last block in the card, so keep the divider above it but not below. */
+.honor--feature .metrics {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.honor--feature .metrics b {
+  font-size: 1.3rem;
 }
 
 /*=============== 8. CONTACT & FOOTER ===============*/
@@ -1874,6 +2089,30 @@ strong {
   }
 }
 
+@keyframes sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  40%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Registered so the angle interpolates smoothly instead of flipping once. */
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin {
+  to {
+    --spin: 360deg;
+  }
+}
+
 @keyframes navIn {
   from {
     opacity: 0;
@@ -1886,19 +2125,27 @@ strong {
   }
 }
 
-/* Reveal-on-scroll. Gated behind .js so content is always visible without JS. */
+/* Reveal-on-scroll. Gated behind .js so content is always visible without JS.
+   Fill mode is `backwards`, never `both`: a filled end keyframe keeps
+   `transform: none` applied from the animation layer indefinitely, and that
+   layer outranks normal rules — it silently disabled the tilt and hover-lift
+   on every card that reveals. The finished state is restated as a plain
+   declaration instead, so the animation lets go when it ends. */
 .js [data-reveal] {
   opacity: 0;
 }
 
 .js [data-reveal].is-in {
-  animation: rise .7s var(--ease) both;
+  opacity: 1;
+  animation: rise .7s var(--ease) backwards;
   animation-delay: var(--d, 0ms);
 }
 
-/* A reveal container must not clip its own tilt children mid-animation. */
-.js [data-reveal].is-in [data-tilt] {
-  will-change: auto;
+/* The rule above is more specific than .honor--feature, so its `animation`
+   shorthand would replace the orbiting border rather than join it. The
+   award card therefore lists both animations explicitly. */
+.js .honor--feature[data-reveal].is-in {
+  animation: rise .7s var(--ease) backwards, spin 8s linear infinite;
 }
 
 /*=============== HOVER-CAPABLE DEVICES ONLY ===============
@@ -1981,6 +2228,21 @@ strong {
 
   .honor--gold:hover .honor__icon {
     color: var(--on-brand);
+  }
+
+  /* The generic .honor:hover border colour would paint over the orbiting
+     gradient, so keep the border transparent and deepen the glow instead. */
+  .honor--feature:hover {
+    border-color: transparent;
+    box-shadow: var(--glow), var(--shadow-lg);
+  }
+
+  .announce:hover {
+    border-color: var(--brand);
+  }
+
+  .announce:hover .announce__arrow {
+    translate: 3px 0;
   }
 
   .tags--lg li:hover {
@@ -2211,6 +2473,27 @@ strong {
     padding: 1.25rem;
   }
 
+  /* Stack the trophy above the text so the metrics get the full width. */
+  .honor--feature {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.4rem;
+  }
+
+  /* Value above caption, as on desktop — the inline rows used by the
+     project cards get cramped at this width with longer values. */
+  .honor--feature .metrics {
+    gap: .8rem;
+  }
+
+  .honor--feature .metrics li {
+    display: block;
+  }
+
+  .honor--feature .metrics b {
+    font-size: 1.15rem;
+  }
+
   .footer__inner {
     flex-direction: column;
     text-align: center;
@@ -2237,6 +2520,17 @@ strong {
 
   .nav__links > a {
     font-size: 1.32rem;
+  }
+}
+
+/* The full award name no longer fits on one line beside the tag. */
+@media (max-width: 480px) {
+  .announce__text--long {
+    display: none;
+  }
+
+  .announce__text--short {
+    display: inline;
   }
 }
 
